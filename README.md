@@ -13,14 +13,14 @@ npm install react-native-rating-element
 ## Usage
 
 ```javascript
-import Rating from "react-native-rating-element";
+import { Rating } from "react-native-rating-element";
 
 <Rating
   rated={3.7}
   totalCount={5}
   ratingColor="#b5121b"
   ratingBackgroundColor="#c8c7c8"
-  size={12}
+  size={24}
   icon="ios-star"
 />
 ```
