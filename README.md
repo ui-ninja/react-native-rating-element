@@ -24,6 +24,8 @@ import { Rating } from "react-native-rating-element";
   icon="ios-star"
 />
 ```
+## Output
+![Output](https://i.ibb.co/R7f680V/output.png)
 
 ## Contributing
 
