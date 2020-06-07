@@ -1,6 +1,12 @@
 # react-native-rating-element
 
-A simple rating library for react native supporting decimal point and custom icon set
+A simple readonly rating library for react native supporting decimal point and custom icon set.
+
+Please note: This is my first open source and I am very wiling to improve this code. If you have any suggestions, kindly raise an PR. 
+
+Next improvements in plan:
+1. Make this interactive, take input from user and record the rating provided.
+2. Add typescript and unit test cases
 
 ## Installation
 
