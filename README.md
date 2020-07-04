@@ -29,8 +29,6 @@ import { Rating } from "react-native-rating-element";
   icon="ios-star"
 />
 ```
-## Output
-![Output](https://i.ibb.co/R7f680V/output.png)
 
 ## API
 
@@ -42,6 +40,9 @@ import { Rating } from "react-native-rating-element";
 | `ratingBackgroundColor`| #c8c7c8 | string (color) | Pass in a custom fill-color for the background of rating icon. It is sometimes referred as empty icon. |
 | `size` | 24 | number | Pass in a custom font size for the icon |
 | `icon` | 25 | number | Pass in a custom text for the icon. For ex. 'beer', 'bulb'. These icons are imported from package [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please Note: For now this package only support Ionicons |
+
+## Output
+![Output](https://i.ibb.co/R7f680V/output.png)
 
 ## Contributing
 
