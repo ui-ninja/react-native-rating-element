@@ -2,7 +2,7 @@
 
 A simple rating library for react native supporting decimal point and custom icon set.
 
-I created this small library as [react-native-ratings](https://github.com/Monte9/react-native-ratings) package was causing UI issues in Android device, when applied withing touchable opacity element.
+I created this small library as [react-native-ratings](https://github.com/Monte9/react-native-ratings) package was causing UI issues in Android device, when applied within touchable opacity element.
 Also the <AirbnbRating /> component, does not support fractions.
 
 This package works perfectly on android's TouchableOpacity, support icons from Ionicons and also support fractions.
