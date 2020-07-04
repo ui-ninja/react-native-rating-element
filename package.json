@@ -29,14 +29,16 @@
   },
   "homepage": "https://github.com/ui-ninja/react-native-rating-element#readme",
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": "^16.13.1",
+    "react-native": "^0.57.1"
   },
   "devDependencies": {
-    "metro-react-native-babel-preset": "^0.59.0",
     "babel-eslint": "^8.0.0",
     "eslint": "^4.5.0",
-    "eslint-plugin-react": "^7.0.0"
+    "eslint-plugin-react": "^7.0.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react": "^16.13.1",
+    "react-native": "^0.57.1"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
