@@ -33,12 +33,7 @@
     "react-native": "^0.57.1"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.0",
-    "eslint": "^4.5.0",
-    "eslint-plugin-react": "^7.0.0",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react": "^16.13.1",
-    "react-native": "^0.57.1"
+    "metro-react-native-babel-preset": "^0.59.0"
   },
   "dependencies": {
     "prop-types": "^15.7.2",

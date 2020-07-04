@@ -38,17 +38,13 @@ const Rating = ({
   return (
     <StyledView>
       <BackgroundStars>
-        <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
-        <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
-        <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
-        <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
-        <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
+        {Array.from({ length: totalCount }, (_, i) => (
+          <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
+        ))}
         <ColoredStars percentage={percentage}>
-          <StarIcon name={icon} size={size} color={ratingColor} />
-          <StarIcon name={icon} size={size} color={ratingColor} />
-          <StarIcon name={icon} size={size} color={ratingColor} />
-          <StarIcon name={icon} size={size} color={ratingColor} />
-          <StarIcon name={icon} size={size} color={ratingColor} />
+          {Array.from({ length: totalCount }, (_, i) => (
+            <StarIcon name={icon} size={size} color={ratingColor} />
+          ))}
         </ColoredStars>
       </BackgroundStars>
     </StyledView>
