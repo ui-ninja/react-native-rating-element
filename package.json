@@ -1,6 +1,6 @@
 {
   "name": "react-native-rating-element",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple rating library for react native supporting decimal point and custom icon set",
   "main": "index.js",
   "scripts": {
