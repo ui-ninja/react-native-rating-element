@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import StarButton from "./components/StarButton";
 import styled from "styled-components/native";
-import Icon from "react-native-vector-icons/Ionicons";
 
 const StyledView = styled.View`
   display: flex;
@@ -22,9 +22,6 @@ const ColoredStars = styled.View`
   position: absolute;
   top: 0;
 `;
-const StarIcon = styled(Icon)`
-  margin-right: 2px;
-`;
 
 const Rating = ({
   rated,
@@ -33,17 +30,36 @@ const Rating = ({
   ratingBackgroundColor,
   size,
   icon,
+  marginBetweenRatingIcon,
+  readonly,
+  onStarTap,
 }) => {
   const percentage = (rated / totalCount) * 100;
   return (
     <StyledView>
       <BackgroundStars>
         {Array.from({ length: totalCount }, (_, i) => (
-          <StarIcon name={icon} size={size} color={ratingBackgroundColor} />
+          <StarButton
+            name={icon}
+            size={size}
+            position={i}
+            color={ratingBackgroundColor}
+            margin={marginBetweenRatingIcon}
+            onStarTap={onStarTap}
+            readonly={readonly}
+          />
         ))}
         <ColoredStars percentage={percentage}>
           {Array.from({ length: totalCount }, (_, i) => (
-            <StarIcon name={icon} size={size} color={ratingColor} />
+            <StarButton
+              name={icon}
+              size={size}
+              color={ratingColor}
+              position={i}
+              margin={marginBetweenRatingIcon}
+              onStarTap={onStarTap}
+              readonly={readonly}
+            />
           ))}
         </ColoredStars>
       </BackgroundStars>
@@ -58,6 +74,8 @@ Rating.defaultProps = {
   ratingBackgroundColor: "#c8c7c8",
   size: 12,
   icon: "ios-star",
+  marginBetweenRatingIcon: 1,
+  readonly: false,
 };
 
 Rating.propTypes = {
@@ -67,6 +85,9 @@ Rating.propTypes = {
   ratingBackgroundColor: PropTypes.string,
   size: PropTypes.number,
   icon: PropTypes.string,
+  marginBetweenRatingIcon: PropTypes.number,
+  readonly: PropTypes.bool,
+  onStarTap: PropTypes.func,
 };
 
 export default Rating;
