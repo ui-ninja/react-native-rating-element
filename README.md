@@ -26,22 +26,41 @@ import { Rating } from "react-native-rating-element";
   ratingColor="#b5121b"
   ratingBackgroundColor="#c8c7c8"
   size={24}
+  readonly
   icon="ios-star"
-/>
+/>;
+
+If you want to record user tap on star
+
+<Rating
+  rated={3.7}
+  totalCount={5}
+  ratingColor="#b5121b"
+  ratingBackgroundColor="#c8c7c8"
+  size={24}
+  onStarTap={position => console.log(`User pressed: ${position}`)}
+  icon="ios-star"
+/>;
+
+
 ```
 
 ## API
 
-| prop | default | type | description |
-| ---- | ---- | ----| ---- |
-| `rated` | 0 | number | Represents Initial value for the rating. |
-| `totalCount` | 5 | number | Number of background stars to show. For ex. Rated 5 out of 10 stars. The 10 value is `totalCount` |
-| `ratingColor` | #b5121b | string (color) | Pass in a custom color to fill-color the rating icon. |
-| `ratingBackgroundColor`| #c8c7c8 | string (color) | Pass in a custom fill-color for the background of rating icon. It is sometimes referred as empty icon. |
-| `size` | 24 | number | Pass in a custom font size for the icon |
-| `icon` | 25 | number | Pass in a custom text for the icon. For ex. 'beer', 'bulb'. These icons are imported from package [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please Note: For now this package only support Ionicons |
+| prop                      | default | type           | description                                                                                                                                                                                                                                  |
+| ------------------------- | ------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `rated`                   | 0       | number         | Represents Initial value for the rating.                                                                                                                                                                                                     |
+| `totalCount`              | 5       | number         | Number of background stars to show. For ex. Rated 5 out of 10 stars. The 10 value is `totalCount`                                                                                                                                            |
+| `ratingColor`             | #b5121b | string (color) | Pass in a custom color to fill-color the rating icon.                                                                                                                                                                                        |
+| `ratingBackgroundColor`   | #c8c7c8 | string (color) | Pass in a custom fill-color for the background of rating icon. It is sometimes referred as empty icon.                                                                                                                                       |
+| `size`                    | 24      | number         | Pass in a custom font size for the icon                                                                                                                                                                                                      |
+| `icon`                    | 25      | number         | Pass in a custom text for the icon. For ex. 'beer', 'bulb'. These icons are imported from package [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please Note: For now this package only support Ionicons |
+| `marginBetweenRatingIcon` | 2       | number         | Pass in custom number to manage space or margin between the rating icons.                                                                                                                                                                    |
+| `onStarTap`               | -       | func           | On press of star icon by user, this function will be invoked with `position` paramter. For ex. when user taps on 4 rating, this function will be invoked and in `position` parameter you will get value 4.                                   |
+| `readonly`                | false   | bool           | If passed true, onPress event wont be fired.                                                                                                                                                                                                 |
 
 ## Output
+
 ![Output](https://i.ibb.co/R7f680V/output.png)
 
 ## Contributing
