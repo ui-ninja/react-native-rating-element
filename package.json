@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/ui-ninja/react-native-rating-element#readme",
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-native": "^0.57.1"
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.59.0"
