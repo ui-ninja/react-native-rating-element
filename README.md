@@ -7,7 +7,7 @@ Also the <AirbnbRating /> component, does not support fractions.
 
 This package works perfectly on android's TouchableOpacity, support icons from Ionicons and also support fractions.
 
-Please note: This package depends on [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please install and configure it before using this package.
+>Please note: This package depends on [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please install and configure it before using this package.
 
 ## Installation
 
