@@ -61,7 +61,7 @@ If you want to record user tap on star
 
 ## Output
 
-![Output](https://i.ibb.co/R7f680V/output.png)
+![Output](https://media1.giphy.com/media/RKBMM6OegB1QvfL4aY/giphy.gif)
 
 ## Contributing
 
