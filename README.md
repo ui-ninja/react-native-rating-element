@@ -4,7 +4,7 @@ A simple rating library for react native supporting decimal points and custom ic
 
 This package support varity of icons from Ionicons and support fractions. You can interact with rating icons too. [API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
 
->Please note: This package depends on [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
+>Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
 
 ## Installation
 
