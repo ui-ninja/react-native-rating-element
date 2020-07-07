@@ -1,13 +1,10 @@
-# react-native-rating-element
+# react-native-rating-element 
 
-A simple rating library for react native supporting decimal point and custom icon set.
+A simple rating library for react native supporting decimal points and custom icon set. [Output](https://github.com/ui-ninja/react-native-rating-element#output)
 
-I created this small library as [react-native-ratings](https://github.com/Monte9/react-native-ratings) package was causing UI issues in Android device, when applied within touchable opacity element.
-Also it's `AirbnbRating` component, does not support fractions.
+This package support varity of icons from Ionicons and support fractions. You can interact with rating icons too. [API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
 
-This package works perfectly on android's TouchableOpacity, support icons from Ionicons and also support fractions.
-
->Please note: This package depends on [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
+>Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
 
 ## Installation
 
