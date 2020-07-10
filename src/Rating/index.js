@@ -5,22 +5,27 @@ import styled from "styled-components/native";
 
 const StyledView = styled.View`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-direction: ${({ dir }) => `${dir}`};
 `;
 const BackgroundStars = styled.View`
   display: flex;
-  flex-direction: row;
   position: relative;
+  flex-direction: ${({ dir }) => `${dir}`};
 `;
 const ColoredStars = styled.View`
-  width: ${({ percentage }) => `${percentage}%`};
   display: flex;
-  flex-direction: row;
   overflow: hidden;
   position: absolute;
-  top: 0;
+  flex-direction: ${({ dir }) => `${dir}`};
+  width: ${({ percentage, dir }) =>
+    dir === "column" || dir === "column-reverse" ? `100%` : `${percentage}%`};
+  height: ${({ percentage, dir }) =>
+    dir === "row" || dir === "row-reverse" ? `100%` : `${percentage}%`};
+
+  top: ${({ dir }) => (dir === "column" ? 0 : "auto")};
+  bottom: ${({ dir }) => (dir === "column-reverse" ? 0 : "auto")};
 `;
 
 const Rating = ({
@@ -33,11 +38,12 @@ const Rating = ({
   marginBetweenRatingIcon,
   readonly,
   onStarTap,
+  direction,
 }) => {
   const percentage = (rated / totalCount) * 100;
   return (
-    <StyledView>
-      <BackgroundStars>
+    <StyledView dir={direction}>
+      <BackgroundStars dir={direction}>
         {Array.from({ length: totalCount }, (_, i) => (
           <StarButton
             name={icon}
@@ -50,7 +56,7 @@ const Rating = ({
             readonly={readonly}
           />
         ))}
-        <ColoredStars percentage={percentage}>
+        <ColoredStars percentage={percentage} dir={direction}>
           {Array.from({ length: totalCount }, (_, i) => (
             <StarButton
               name={icon}
@@ -78,6 +84,7 @@ Rating.defaultProps = {
   icon: "ios-star",
   marginBetweenRatingIcon: 1,
   readonly: false,
+  direction: "row",
 };
 
 Rating.propTypes = {
@@ -90,6 +97,12 @@ Rating.propTypes = {
   marginBetweenRatingIcon: PropTypes.number,
   readonly: PropTypes.bool,
   onStarTap: PropTypes.func,
+  direction: PropTypes.oneOf([
+    "row",
+    "row-reverse",
+    "column",
+    "column-reverse",
+  ]),
 };
 
 export default Rating;
