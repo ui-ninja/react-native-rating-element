@@ -1,10 +1,10 @@
-# react-native-rating-element 
+# react-native-rating-element
 
-A simple rating library for react native supporting decimal points and custom icon set. [Output](https://github.com/ui-ninja/react-native-rating-element#output)
+A simple rating library for react native supporting decimal points, direction aware and custom icon set. [Output](https://github.com/ui-ninja/react-native-rating-element#output)
 
-This package support varity of icons from Ionicons and support fractions. You can interact with rating icons too. [API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
+This package support varity of icons from Ionicons, direction aware and support fractions. You can interact with rating icons too. [API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
 
->Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
+> Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
 
 ## Installation
 
@@ -27,6 +27,7 @@ import { Rating } from "react-native-rating-element";
   size={24}
   readonly
   icon="ios-star"
+  direction="row"
 />;
 
 *If you want to record user tap on star icon*
@@ -39,6 +40,7 @@ import { Rating } from "react-native-rating-element";
   size={24}
   onStarTap={position => console.log(`User pressed: ${position}`)}
   icon="ios-star"
+  direction="row"
 />;
 
 
@@ -57,10 +59,11 @@ import { Rating } from "react-native-rating-element";
 | `marginBetweenRatingIcon` | 1          | number         | Pass in custom number to manage space or margin between the rating icons.                                                                                                                                                                    |
 | `onStarTap`               | -          | func           | On press of star icon by user, this function will be invoked with `position` paramter. For ex. when user taps on 4 rating, this function will be invoked and in `position` parameter you will get value 4.                                   |
 | `readonly`                | false      | bool           | If passed true, onPress event won't be fired.                                                                                                                                                                                                |
+| `direction`               | 'row'      | string         | Pass any value from `[ "row", "row-reverse", "column", "column-reverse"]`.                                                                                                                                                                   |
 
 ## Output
 
-![Output](https://media1.giphy.com/media/RKBMM6OegB1QvfL4aY/giphy.gif)
+![Output](https://s7.gifyu.com/images/rating-demo-gif.gif)
 
 ## Contributing
 
