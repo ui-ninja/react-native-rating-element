@@ -1,10 +1,17 @@
 # react-native-rating-element
 
-A simple rating library for react native supporting decimal points, direction aware and custom icon set. [Output](https://github.com/ui-ninja/react-native-rating-element#output)
-
-This package support varity of icons from Ionicons, direction aware and support fractions. You can interact with rating icons too. [API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
+A simple rating library for react native supporting:
+* **decimal points** like 3.7, 4.2 etc,
+* **direction aware** icons (like you can pass direction as “column” or “row-reverse”),
+* **custom icon set** from Ionicons,
+* and **interact and record rating** given by users.
 
 > Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
+
+[Output](https://github.com/ui-ninja/react-native-rating-element#output)
+<br />
+[API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
+
 
 ## Installation
 
