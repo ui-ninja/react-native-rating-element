@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StarButton from "./components/StarButton";
+import IconBar from "./components/IconBar";
 import styled from "styled-components/native";
 
 const StyledView = styled.View`
@@ -9,12 +9,12 @@ const StyledView = styled.View`
   justify-content: center;
   flex-direction: ${({ dir }) => `${dir}`};
 `;
-const BackgroundStars = styled.View`
+const BackgroundIcons = styled.View`
   display: flex;
   position: relative;
   flex-direction: ${({ dir }) => `${dir}`};
 `;
-const ColoredStars = styled.View`
+const ColoredIcons = styled.View`
   display: flex;
   overflow: hidden;
   position: absolute;
@@ -37,40 +37,51 @@ const Rating = ({
   icon,
   marginBetweenRatingIcon,
   readonly,
-  onStarTap,
+  onIconTap,
   direction,
+  type,
+  selectedIconImage,
+  emptyIconImage,
 }) => {
   const percentage = (rated / totalCount) * 100;
+
   return (
     <StyledView dir={direction}>
-      <BackgroundStars dir={direction}>
+      <BackgroundIcons dir={direction}>
         {Array.from({ length: totalCount }, (_, i) => (
-          <StarButton
+          <IconBar
             name={icon}
             size={size}
             position={i}
             key={`bgstar_${i}`}
             color={ratingBackgroundColor}
             margin={marginBetweenRatingIcon}
-            onStarTap={onStarTap}
+            onIconTap={onIconTap}
             readonly={readonly}
+            type={type}
+            selectedIconImage={selectedIconImage}
+            emptyIconImage={emptyIconImage}
           />
         ))}
-        <ColoredStars percentage={percentage} dir={direction}>
+        <ColoredIcons percentage={percentage} dir={direction}>
           {Array.from({ length: totalCount }, (_, i) => (
-            <StarButton
+            <IconBar
               name={icon}
               size={size}
               color={ratingColor}
               position={i}
               key={`cstar_${i}`}
               margin={marginBetweenRatingIcon}
-              onStarTap={onStarTap}
+              onIconTap={onIconTap}
               readonly={readonly}
+              type={type}
+              selectedIconImage={selectedIconImage}
+              emptyIconImage={emptyIconImage}
+              filled
             />
           ))}
-        </ColoredStars>
-      </BackgroundStars>
+        </ColoredIcons>
+      </BackgroundIcons>
     </StyledView>
   );
 };
@@ -85,6 +96,7 @@ Rating.defaultProps = {
   marginBetweenRatingIcon: 1,
   readonly: false,
   direction: "row",
+  type: "icon",
 };
 
 Rating.propTypes = {
@@ -96,13 +108,16 @@ Rating.propTypes = {
   icon: PropTypes.string,
   marginBetweenRatingIcon: PropTypes.number,
   readonly: PropTypes.bool,
-  onStarTap: PropTypes.func,
+  onIconTap: PropTypes.func,
   direction: PropTypes.oneOf([
     "row",
     "row-reverse",
     "column",
     "column-reverse",
   ]),
+  type: PropTypes.oneOf(["icon", "custom"]),
+  selectedIconImage: PropTypes.node,
+  emptyIconImage: PropTypes.node,
 };
 
 export default Rating;
