@@ -42,11 +42,8 @@ import { Rating } from "react-native-rating-element";
 <Rating
   rated={3.7}
   totalCount={5}
-  ratingColor="#b5121b"
-  ratingBackgroundColor="#c8c7c8"
-  size={24}
+  size={42}
   onIconTap={position => console.log(`User pressed: ${position}`)}
-  icon="ios-star"
   direction="row"
   type="custom"
   selectedIconImage={require('./filled.png')}
