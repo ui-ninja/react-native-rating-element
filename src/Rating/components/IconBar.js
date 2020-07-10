@@ -25,40 +25,25 @@ const IconBar = ({
   selectedIconImage,
   emptyIconImage,
   filled = false,
-}) => {
-  const emptyIcon = type === "custom" ? emptyIconImage : name;
-  const filledIcon = type === "custom" ? selectedIconImage : name;
-
-  return (
-    <TouchableOpacity
-      onPress={() => {
-        if (!readonly) {
-          onIconTap(position + 1);
-        }
-      }}
-    >
-      {type === "custom" ? (
-        <StyledImage
-          source={filled ? filledIcon : emptyIcon}
-          margin={margin}
-          size={size}
-        />
-      ) : (
-        <StyledIcon
-          onPress={() => {
-            if (!readonly) {
-              onIconTap(position + 1);
-            }
-          }}
-          name={name}
-          size={size}
-          color={color}
-          margin={margin}
-        />
-      )}
-    </TouchableOpacity>
-  );
-};
+}) => (
+  <TouchableOpacity
+    onPress={() => {
+      if (!readonly) {
+        onIconTap(position + 1);
+      }
+    }}
+  >
+    {type === "custom" ? (
+      <StyledImage
+        source={filled ? selectedIconImage : emptyIconImage}
+        margin={margin}
+        size={size}
+      />
+    ) : (
+      <StyledIcon name={name} size={size} color={color} margin={margin} />
+    )}
+  </TouchableOpacity>
+);
 
 IconBar.propTypes = {
   color: PropTypes.string,

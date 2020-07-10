@@ -51,9 +51,9 @@ const Rating = ({
         {Array.from({ length: totalCount }, (_, i) => (
           <IconBar
             name={icon}
+            key={`bgstar_${i}`}
             size={size}
             position={i}
-            key={`bgstar_${i}`}
             color={ratingBackgroundColor}
             margin={marginBetweenRatingIcon}
             onIconTap={onIconTap}
@@ -66,18 +66,18 @@ const Rating = ({
         <ColoredIcons percentage={percentage} dir={direction}>
           {Array.from({ length: totalCount }, (_, i) => (
             <IconBar
+              filled
               name={icon}
-              size={size}
-              color={ratingColor}
-              position={i}
               key={`cstar_${i}`}
+              size={size}
+              position={i}
+              color={ratingColor}
               margin={marginBetweenRatingIcon}
               onIconTap={onIconTap}
               readonly={readonly}
               type={type}
               selectedIconImage={selectedIconImage}
               emptyIconImage={emptyIconImage}
-              filled
             />
           ))}
         </ColoredIcons>
