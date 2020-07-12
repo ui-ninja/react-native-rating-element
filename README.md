@@ -72,7 +72,7 @@ import { Rating } from "react-native-rating-element";
 
 ## Output
 
-![Output](https://s7.gifyu.com/images/Hnet-imageaef0d33f6afa1ffa.gif)
+![Output](https://s7.gifyu.com/images/ratingV5.1.3.gif)
 
 ## Contributing
 
