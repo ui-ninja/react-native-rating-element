@@ -89,8 +89,8 @@ const Rating = ({
 Rating.defaultProps = {
   rated: 0,
   totalCount: 5,
-  ratingColor: "#b5121b",
-  ratingBackgroundColor: "#c8c7c8",
+  ratingColor: "#f1c644",
+  ratingBackgroundColor: "#d4d4d4",
   size: 12,
   icon: "ios-star",
   marginBetweenRatingIcon: 1,

@@ -30,8 +30,8 @@ import { Rating } from "react-native-rating-element";
 <Rating
   rated={3.7}
   totalCount={5}
-  ratingColor="#b5121b"
-  ratingBackgroundColor="#c8c7c8"
+  ratingColor="#f1c644"
+  ratingBackgroundColor="#d4d4d4"
   size={24}
   readonly
   icon="ios-star"
@@ -55,8 +55,8 @@ import { Rating } from "react-native-rating-element";
 <Rating
   rated={3.7}
   totalCount={5}
-  ratingColor="#b5121b"
-  ratingBackgroundColor="#c8c7c8"
+  ratingColor="#f1c644"
+  ratingBackgroundColor="#d4d4d4"
   size={24}
   onIconTap={position => console.log(`User pressed: ${position}`)}
   icon="ios-star"
@@ -73,8 +73,8 @@ import { Rating } from "react-native-rating-element";
 | `type`                    | `icon`     | string            | Be default the value is set to "icon" type. If you want custom images, then pass `custom` as prop value. <br />In case of `custom`, Make sure to pass `selectedIconImage` and `emptyIconImage`.                                              |  |
 | `rated`                   | 0          | number            | Represents Initial value for the rating.                                                                                                                                                                                                     |
 | `totalCount`              | 5          | number            | Number of background stars to show. For ex. Rated 5 out of 10 stars. The 10 value is `totalCount`                                                                                                                                            |
-| `ratingColor`             | #b5121b    | string (color)    | Pass in a custom color to fill-color the rating icon.                                                                                                                                                                                        |
-| `ratingBackgroundColor`   | #c8c7c8    | string (color)    | Pass in a custom fill-color for the background of rating icon. It is sometimes referred as empty icon.                                                                                                                                       |
+| `ratingColor`             | #f1c644    | string (color)    | Pass in a custom color to fill-color the rating icon.                                                                                                                                                                                        |
+| `ratingBackgroundColor`   | #d4d4d4    | string (color)    | Pass in a custom fill-color for the background of rating icon. It is sometimes referred as empty icon.                                                                                                                                       |
 | `size`                    | 24         | number            | Pass in a custom font size for the icon                                                                                                                                                                                                      |
 | `icon`                    | 'ios-star' | string            | Pass in a custom text for the icon. For ex. 'beer', 'bulb'. These icons are imported from package [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/). Please Note: For now this package only support Ionicons |
 | `marginBetweenRatingIcon` | 1          | number            | Pass in custom number to manage space or margin between the rating icons.                                                                                                                                                                    |

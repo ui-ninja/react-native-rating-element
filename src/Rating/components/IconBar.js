@@ -40,7 +40,12 @@ const IconBar = ({
         size={size}
       />
     ) : (
-      <StyledIcon name={name} size={size} color={color} margin={margin} />
+      <StyledIcon
+        name={name}
+        size={size}
+        color={color}
+        margin={margin}
+      />
     )}
   </TouchableOpacity>
 );
