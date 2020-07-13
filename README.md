@@ -1,4 +1,6 @@
-# react-native-rating-element
+<h1 align="center">
+    React Native Rating Element
+</h1>
 
 A simple rating library for react native supporting:
 
@@ -8,11 +10,18 @@ A simple rating library for react native supporting:
 - **custom images** (You can add any suitable image as per your wish),
 - and **interact and record rating** given by users.
 
-> Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
+<h3 align="center">
+  <a href="https://github.com/ui-ninja/react-native-rating-element#installation">Installation</a>
+  <span> · </span>
+  <a href="https://github.com/ui-ninja/react-native-rating-element#usage">Usage</a>
+  <span> · </span>
+  <a href="https://github.com/ui-ninja/react-native-rating-element#api">API Documentation</a>
+  <span> · </span>
+  <a href="https://github.com/ui-ninja/react-native-rating-element#output">Sample Output</a>
+  <span> · </span>
+</h3>
 
-[Output](https://github.com/ui-ninja/react-native-rating-element#output)
-<br />
-[API Documentation here](https://github.com/ui-ninja/react-native-rating-element#api)
+> Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
 
 ## Installation
 
