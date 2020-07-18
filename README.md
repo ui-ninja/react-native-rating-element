@@ -21,6 +21,10 @@ A simple rating library for react native supporting:
   <span> · </span>
 </h3>
 
+<div align="center">
+<img src="https://s7.gifyu.com/images/ratingV5.1.3.gif" width="200" />
+</div>
+
 > Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
 
 ## Installation
