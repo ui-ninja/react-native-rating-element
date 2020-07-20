@@ -27,6 +27,7 @@ const IconBar = ({
   filled = false,
 }) => (
   <TouchableOpacity
+    activeOpacity={1}
     onPress={() => {
       if (!readonly) {
         onIconTap(position + 1);
@@ -40,12 +41,7 @@ const IconBar = ({
         size={size}
       />
     ) : (
-      <StyledIcon
-        name={name}
-        size={size}
-        color={color}
-        margin={margin}
-      />
+      <StyledIcon name={name} size={size} color={color} margin={margin} />
     )}
   </TouchableOpacity>
 );
