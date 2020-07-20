@@ -25,7 +25,7 @@ A simple rating library for react native supporting:
 <img src="https://s7.gifyu.com/images/ratingV5.1.3.gif" width="200" />
 </div>
 
-> Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please install and configure it before using this package. It is simple to install - First, install the package via `npm` and then link it using `react-native link`.
+> Please note: This package depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation). Please configure it for iOS and android before using this package. <br /> - For iOS, you will need to add `Ionicons.ttf` file from `node_modules/react-native-vector-icons` to `Fonts` folder and then edit `Info.plist`. [Try this article](https://medium.com/@vimniky/how-to-use-vector-icons-in-your-react-native-project-8212ac6a8f06) <br /> - For android - Please follow [these instruction](https://github.com/oblador/react-native-vector-icons#option-with-gradle-recommended).
 
 ## Installation
 
@@ -90,8 +90,6 @@ import { Rating } from "react-native-rating-element";
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
