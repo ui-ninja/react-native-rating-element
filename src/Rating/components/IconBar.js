@@ -30,7 +30,7 @@ const IconBar = ({
     activeOpacity={1}
     onPress={() => {
       if (!readonly) {
-        onIconTap(position + 1);
+        onIconTap && onIconTap(position + 1);
       }
     }}
   >
