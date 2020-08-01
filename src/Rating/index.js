@@ -46,10 +46,15 @@ const Rating = ({
   const percentage = (rated / totalCount) * 100;
 
   return (
-    <StyledView dir={direction}>
+    <StyledView
+      dir={direction}
+      accessible={!readonly}
+      importantForAccessibility={!readonly ? "yes" : "no"}
+    >
       <BackgroundIcons dir={direction}>
         {Array.from({ length: totalCount }, (_, i) => (
           <IconBar
+            isAccessible
             name={icon}
             key={`bgstar_${i}`}
             size={size}
@@ -61,6 +66,7 @@ const Rating = ({
             type={type}
             selectedIconImage={selectedIconImage}
             emptyIconImage={emptyIconImage}
+            totalCount={totalCount}
           />
         ))}
         <ColoredIcons percentage={percentage} dir={direction}>
@@ -78,6 +84,7 @@ const Rating = ({
               type={type}
               selectedIconImage={selectedIconImage}
               emptyIconImage={emptyIconImage}
+              totalCount={totalCount}
             />
           ))}
         </ColoredIcons>
