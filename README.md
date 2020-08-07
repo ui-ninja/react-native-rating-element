@@ -4,6 +4,7 @@
 
 A simple rating library for react native supporting:
 
+- **a11y ready** ⚛️
 - **decimal points** like 3.7, 4.2 etc,
 - **direction aware** icons (like you can pass direction as “column” or “row-reverse”),
 - **custom icon set** from Ionicons,
