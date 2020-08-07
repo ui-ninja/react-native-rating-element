@@ -4,6 +4,7 @@ import { Rating } from 'react-native-rating-element';
 
 const App = () => {
   const [rating, setRating] = useState(0);
+  const [imageRating, setImageRating] = useState(0);
 
   return (
     <View style={styles.body}>
@@ -27,7 +28,7 @@ const App = () => {
 
       <View style={styles.card}>
         <Text style={{fontSize: 16}}>
-          Readonly Rating (3/5, direction="column")
+          Interactive Rating (3/5, direction="column-reverse")
         </Text>
         <Rating
           rated={rating}
@@ -36,11 +37,29 @@ const App = () => {
           ratingBackgroundColor="#d4d4d4"
           size={32}
           icon="add-circle"
-          direction="column"
+          direction="column-reverse"
           onIconTap={pos => setRating(pos)}
         />
         <Text accessibilityLiveRegion="polite" accessibilityLabel={`Rating selected ${rating} out of 5`}>{rating}/5 (200)</Text>
       </View>
+
+      <View style={styles.card}>
+        <Text style={{fontSize: 16}}>
+          Custom Images Rating
+        </Text>
+        <Rating
+          rated={imageRating}
+          totalCount={5}
+          size={48}
+          direction="row"
+          type="custom"
+          onIconTap={pos => setImageRating(pos)}
+          selectedIconImage={require('./assets/filled.png')}
+          emptyIconImage={require('./assets/empty.png')}
+        />
+        <Text accessibilityLiveRegion="polite" accessibilityLabel={`Rating selected ${imageRating} out of 5`}>{imageRating}/5 (100)</Text>
+      </View>
+
     </View>
   );
 };
@@ -53,6 +72,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   card: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#eee',
     marginBottom: 20,
   },
 });
