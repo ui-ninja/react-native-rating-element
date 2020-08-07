@@ -25,9 +25,15 @@ const IconBar = ({
   selectedIconImage,
   emptyIconImage,
   filled = false,
+  totalCount,
+  isAccessible,
 }) => (
   <TouchableOpacity
     activeOpacity={1}
+    accessible={isAccessible}
+    importantForAccessibility={isAccessible ? "yes" : "no"}
+    accessibilityLabel={`Press to rate ${position + 1} out of ${totalCount}`}
+    accessibilityRole="button"
     onPress={() => {
       if (!readonly) {
         onIconTap && onIconTap(position + 1);
@@ -58,6 +64,7 @@ IconBar.propTypes = {
   type: PropTypes.oneOf(["icon", "custom"]),
   selectedIconImage: PropTypes.node,
   emptyIconImage: PropTypes.node,
+  totalCount: PropTypes.number,
 };
 
 export default IconBar;
