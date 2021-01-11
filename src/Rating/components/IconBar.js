@@ -35,8 +35,8 @@ const IconBar = ({
     accessibilityLabel={`Press to rate ${position + 1} out of ${totalCount}`}
     accessibilityRole="button"
     onPress={() => {
-      if (!readonly) {
-        onIconTap && onIconTap(position + 1);
+      if (!readonly && onIconTap) {
+        onIconTap(position + 1);
       }
     }}
   >

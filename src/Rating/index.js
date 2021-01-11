@@ -4,27 +4,45 @@ import IconBar from "./components/IconBar";
 import styled from "styled-components/native";
 
 const StyledView = styled.View`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: ${({ dir }) => `${dir}`};
 `;
 const BackgroundIcons = styled.View`
-  display: flex;
   position: relative;
   flex-direction: ${({ dir }) => `${dir}`};
+  ${({ type, dir }) =>
+    type !== "custom" &&
+    dir === "row-reverse" &&
+    `
+    flex-direction: row;
+  `}
+  ${({ type, dir }) =>
+    type !== "custom" &&
+    dir === "column-reverse" &&
+    `
+    flex-direction: column;
+  `}
 `;
 const ColoredIcons = styled.View`
-  display: flex;
   overflow: hidden;
   position: absolute;
   flex-direction: ${({ dir }) => `${dir}`};
+  ${({ type, dir }) =>
+    type !== "custom" &&
+    dir === "row-reverse" &&
+    `
+    flex-direction: row;
+  `};
+  ${({ type, dir }) =>
+    type !== "custom" &&
+    dir === "column-reverse" &&
+    `
+    flex-direction: column;
+  `};
   width: ${({ percentage, dir }) =>
-    dir === "column" || dir === "column-reverse" ? `100%` : `${percentage}%`};
+    dir === "column" || dir === "column-reverse" ? `auto` : `${percentage}%`};
   height: ${({ percentage, dir }) =>
-    dir === "row" || dir === "row-reverse" ? `100%` : `${percentage}%`};
-
-  top: ${({ dir }) => (dir === "column" ? 0 : "auto")};
+    dir === "row" || dir === "row-reverse" ? `auto` : `${percentage}%`};
+  top: 0;
   bottom: ${({ dir }) => (dir === "column-reverse" ? 0 : "auto")};
 `;
 
@@ -43,23 +61,30 @@ const Rating = ({
   selectedIconImage,
   emptyIconImage,
 }) => {
-  const percentage = (rated / totalCount) * 100;
-
+  const isReverse = ["row-reverse", "column-reverse"].includes(direction);
+  let percentage = (rated / totalCount) * 100;
+  if (isReverse && type !== "custom") {
+    percentage = 100 - percentage;
+  }
   return (
     <StyledView
       dir={direction}
       accessible={!readonly}
       importantForAccessibility={!readonly ? "yes" : "no"}
     >
-      <BackgroundIcons dir={direction}>
+      <BackgroundIcons dir={direction} type={type}>
         {Array.from({ length: totalCount }, (_, i) => (
           <IconBar
             isAccessible
             name={icon}
             key={`bgstar_${i}`}
             size={size}
-            position={i}
-            color={ratingBackgroundColor}
+            position={isReverse && type !== "custom" ? totalCount - (i + 1) : i}
+            color={
+              isReverse && type !== "custom"
+                ? ratingColor
+                : ratingBackgroundColor
+            }
             margin={marginBetweenRatingIcon}
             onIconTap={onIconTap}
             readonly={readonly}
@@ -69,15 +94,21 @@ const Rating = ({
             totalCount={totalCount}
           />
         ))}
-        <ColoredIcons percentage={percentage} dir={direction}>
+        <ColoredIcons percentage={percentage} dir={direction} type={type}>
           {Array.from({ length: totalCount }, (_, i) => (
             <IconBar
               filled
               name={icon}
               key={`cstar_${i}`}
               size={size}
-              position={i}
-              color={ratingColor}
+              position={
+                isReverse && type !== "custom" ? totalCount - (i + 1) : i
+              }
+              color={
+                isReverse && type !== "custom"
+                  ? ratingBackgroundColor
+                  : ratingColor
+              }
               margin={marginBetweenRatingIcon}
               onIconTap={onIconTap}
               readonly={readonly}
